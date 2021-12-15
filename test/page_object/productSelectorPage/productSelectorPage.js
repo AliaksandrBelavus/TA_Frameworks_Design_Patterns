@@ -1,3 +1,4 @@
+const logger = require("../../config/logger.config");
 const BasePage = require("../base_page/base_page");
 const Element = require("../base_elements/base_elements");
 
@@ -31,18 +32,23 @@ class ProductSelectorPage extends BasePage {
     );
   }
   open() {
+    logger.info(`Opening "${this.url}" url`);
     return super.open(this.url);
   }
   clickUPSSelector() {
+    logger.info(`Clicking "UPSSelector"`);
     return this.UPSSelector.click();
   }
   clickConfigureByLoadButton() {
+    logger.info(`Clicking "Configure by Load Button"`);
     return this.ConfigureByLoadButton.click();
   }
   clickHomeEnvironmentRadio() {
+    logger.info(`Select "Home Environment Radiobutton"`);
     return this.HomeEnvironmentRadio.click();
   }
   sendKeysTotalPower(text) {
+    logger.info(`Sent to "${this.TotalPowerInput}" text [${text}]`);
     return this.TotalPowerInput.sendKeys(text);
   }
 }

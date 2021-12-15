@@ -1,3 +1,4 @@
+const logger = require("../../config/logger.config");
 const Header = require("./header");
 
 class BasePage {

@@ -1,3 +1,5 @@
+const logger = require("../../config/logger.config");
+
 class Element {
   constructor(selectorType, selector) {
     if (selectorType === "css") {
@@ -8,10 +10,12 @@ class Element {
     return this.element;
   }
   click() {
+    logger.info(`Clicking "${this.element}"`);
     return this.element.click();
   }
   async getText() {
     const elementText = await this.element.getText();
+    logger.info(`Text of element "${this.element}" is [${elementText}]`);
     return elementText;
   }
 

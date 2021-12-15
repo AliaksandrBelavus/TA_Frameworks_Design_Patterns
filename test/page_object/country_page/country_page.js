@@ -1,3 +1,4 @@
+const logger = require("../../config/logger.config");
 const BasePage = require("../base_page/base_page");
 const Element = require("../base_elements/base_elements");
 
@@ -11,9 +12,11 @@ class CountryPage extends BasePage {
     );
   }
   open() {
+    logger.info(`Opening "${this.url}" url`);
     return super.open(this.url);
   }
   clickUSCountry() {
+    logger.info(`Clicking "United States"`);
     return this.USCountry.click();
   }
 }

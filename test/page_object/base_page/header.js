@@ -1,3 +1,4 @@
+const logger = require("../../config/logger.config");
 const Element = require("../base_elements/base_elements");
 
 class Header {
@@ -10,9 +11,11 @@ class Header {
     );
   }
   clickSupport() {
+    logger.info(`Clicking "Support Button"`);
     return this.Support.click();
   }
   clickProductSelector() {
+    logger.info(`Clicking "Product Selectors Button"`);
     return this.ProductSelector.click();
   }
 }
